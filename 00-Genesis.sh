@@ -1,25 +1,22 @@
 #!/bin/bash
 ###################################################################################################################################################
 
-Inicial de instalacion de i3 para entorno debian sin gui. se necesita instalar en modo server 
+# Inicial de instalacion de i3 para entorno debian sin gui. se necesita instalar en modo server 
+
+# de momento es mejor tener el xfce instalado ya q nos facilitara la vida. 
 
 # 1. Pendiente de documentacion de que hace cada paquete instalado o para que es 
 
+#######################################################################################################################
 
-
-
-###################################################################################################################################################
-
-sudo apt update && sudo apt upgrade && sudo apt install nala                                                           # Actualizacion inicial 
-sudo nala fetch --auto -y                                                                                              # # Examina los servidores espejo y setea los 3 primeros por defecto. 
-sudo nala install xorg i3 i3lock i3status i3wm i3lock-fancy rofi -y 
+sudo apt update && sudo apt upgrade && sudo apt install nala                                                                                               #  Actualizacion inicial 
+sudo nala fetch --auto -y                                                                                                                                  # Examina los servidores espejo y setea los 3 primeros por defecto. 
+sudo nala install xorg i3 i3lock i3status i3lock-fancy rofi -y 
 
 sudo apt install linux-headers-amd64 -y 
+setxkbmap 'us(intl)'                                                                                                                                       # Esto setea el teclado en Ingles Internacional con teclas muerta (AltGR)
 
-                                                                                                                       
-
-
-sudo nala install wget curl ufw font-manager zsh htop preload kitty dunst rofi lxappearance suckless-tools xrandr -y &&                                     # Instala Paquetes basicos.
+sudo nala install wget curl ufw font-manager zsh htop preload kitty dunst rofi lxappearance suckless-tools xrandr -y &&                                    # Instala Paquetes basicos.
 
 
 #=======================================================================================#
