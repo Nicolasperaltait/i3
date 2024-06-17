@@ -7,6 +7,9 @@
 
 # 1. Pendiente de documentacion de que hace cada paquete instalado o para que es 
 
+#test vscode web // Si funciona jeje
+
+
 #######################################################################################################################
 
 sudo apt update && sudo apt upgrade && sudo apt install nala                                                                                               #  Actualizacion inicial 
