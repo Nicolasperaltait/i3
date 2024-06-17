@@ -21,6 +21,10 @@ setxkbmap 'us(intl)'                                                            
 
 sudo nala install wget curl ufw font-manager zsh htop preload kitty dunst rofi lxappearance suckless-tools xrandr -y &&                                    # Instala Paquetes basicos.
 
+sudo apt install feh lxappearance compton numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme blueman -y                                    # sacado de https://geekland.eu/instalar-configurar-y-usar-el-gestor-de-ventanas-i3-en-linux/
+
+
+
 
 #=======================================================================================#
 
