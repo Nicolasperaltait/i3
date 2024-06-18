@@ -14,7 +14,7 @@
 
 sudo apt update && sudo apt upgrade && sudo apt install nala                                                                                               #  Actualizacion inicial 
 sudo nala fetch --auto -y                                                                                                                                  # Examina los servidores espejo y setea los 3 primeros por defecto. 
-sudo nala install xorg i3 i3lock i3status i3lock-fancy rofi -y 
+sudo nala install xorg i3 i3lock i3status i3lock-fancy rofi lxpolkit -y 
 
 sudo apt install linux-headers-amd64 -y 
 setxkbmap 'us(intl)'                                                                                                                                       # Esto setea el teclado en Ingles Internacional con teclas muerta (AltGR)
@@ -51,6 +51,4 @@ echo "Basic configuration done"
 # ver documentacion nvidia driver  // https://wiki.debian.org/NvidiaGraphicsDrivers 
 
 
-
-
-
+#=======================================================================================#
