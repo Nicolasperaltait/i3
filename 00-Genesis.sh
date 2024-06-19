@@ -23,7 +23,7 @@ sudo nala install wget curl ufw font-manager zsh htop preload kitty dunst rofi l
 
 sudo apt install feh lxappearance compton numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme blueman -y                                    # sacado de https://geekland.eu/instalar-configurar-y-usar-el-gestor-de-ventanas-i3-en-linux/
 
-
+ sudo apt install ntfs-3g 
 
 
 #=======================================================================================#
