@@ -1,29 +1,34 @@
 #!/bin/bash
-###################################################################################################################################################
-
-# Inicial de instalacion de i3 para entorno debian sin gui. se necesita instalar en modo server 
-
-# de momento es mejor tener el xfce instalado ya q nos facilitara la vida. 
 
 # 1. Pendiente de documentacion de que hace cada paquete instalado o para que es 
 
-#test vscode web // Si funciona jeje
+#=======================================================================================#
+## Instalacion Genesis Basicos e importates para el sistema. 
 
+setxkbmap 'us(intl)'                                                                                                 # Teclado en Ingles Internacional con teclas muerta (AltGR)
 
-#######################################################################################################################
+sudo apt update && sudo apt upgrade && sudo apt install nala                                                         # Actualizacion inicial 
 
-sudo apt update && sudo apt upgrade && sudo apt install nala                                                                                               #  Actualizacion inicial 
-sudo nala fetch --auto -y                                                                                                                                  # Examina los servidores espejo y setea los 3 primeros por defecto. 
-sudo nala install xorg i3 i3lock i3status i3lock-fancy rofi lxpolkit -y 
+sudo nala fetch --auto -y                                                                                            # Examina los servidores espejo y setea los 3 primeros por defecto. 
 
-sudo apt install linux-headers-amd64 -y 
-setxkbmap 'us(intl)'                                                                                                                                       # Esto setea el teclado en Ingles Internacional con teclas muerta (AltGR)
+sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 -y  # Esenciales para i3
 
-sudo nala install wget curl ufw font-manager zsh htop preload kitty dunst rofi lxappearance suckless-tools xrandr -y &&                                    # Instala Paquetes basicos.
+sudo nala install git wget curl zsh htop preload kitty xrandr rofi compton font-manager lxappearance -y              # Instala Paquetes basicos.
 
-sudo apt install feh lxappearance compton numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme blueman -y                                    # sacado de https://geekland.eu/instalar-configurar-y-usar-el-gestor-de-ventanas-i3-en-linux/
+sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme -y     
 
- sudo apt install ntfs-3g 
+# sacado de https://geekland.eu/instalar-configurar-y-usar-el-gestor-de-ventanas-i3-en-linux/
+
+#=======================================================================================#
+
+## Gestion de Audio y Sonido 
+
+sudo apt install pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse libspa-0.2-bluetooth alsa-utils -y 
+
+## La parte Bluethooth no es compatible todavia con el modulo de i3bloks 
+
+#sudo nala install pulseaudio-module-bluetooth                                                                        # Necesario para el funcionamiento
+#sudo nala install blueman                                                                                            # Gestor GUI
 
 
 #=======================================================================================#
@@ -31,6 +36,7 @@ sudo apt install feh lxappearance compton numlockx pulseaudio-utils pavucontrol 
 # Configuraciones basicas de seguridad.
 echo "================== Firewall configuration =================="
 
+sudo nala install ufw
 sudo ufw enable                                                                            # Habilitar UFW para gestionar el firewall
 sudo ufw default deny incoming                                                             # Configurar el firewall para denegar todas las conexiones entrantes por defecto
 sudo ufw default allow outgoing                                                            # Configurar el firewall para permitir todas las conexiones salientes por defecto
@@ -44,6 +50,7 @@ sudo systemctl stop clamav-freshclam                                            
 sudo freshclam                                                                             # Actualizar la base de datos de firmas de virus de ClamAV
 sudo systemctl start clamav-freshclam                                                      # Iniciar de nuevo el servicio de actualización de ClamAV
 sudo systemctl start clamav-daemon                                                         # Habilitar y iniciar el servicio de ClamAV
+
 #=======================================================================================#
 
 echo "Basic configuration done"
