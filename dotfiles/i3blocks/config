@@ -20,7 +20,7 @@
 # signal
 # urgent
 
-#==============================================================================================
+#==============================================================================================#
 # Global properties
 #
 # The top properties below are applied to every block, but can be overridden.
@@ -34,7 +34,7 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 
-#==============================================================================================
+#==============================================================================================#
 #Genericos del sistema 
 #
 
@@ -57,45 +57,39 @@ markup=none
 #label=LOAD
 #interval=10
 
-#===================================================================================
+#=============================================================================================#
 #Es necesario tener //  sudo apt install alsa-utils
-
 [volume-pulseaudio]
 command=$SCRIPT_DIR/volume-pulseaudio/volume-pulseaudio
-interval=once
+interval=1
 signal=1
-#MIXER=[determined automatically]
-#SCONTROL=[determined automatically]
-##exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
-#LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
-#SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
-#AUDIO_HIGH_SYMBOL='  '
-#AUDIO_MED_THRESH=50
-#AUDIO_MED_SYMBOL='  '
-#AUDIO_LOW_THRESH=0
-#AUDIO_LOW_SYMBOL='  '
-#AUDIO_DELTA=5
-#DEFAULT_COLOR="#ffffff"
-#MUTED_COLOR="ec3812"
-#USE_ALSA_NAME=0
-#USE_DESCRIPTION=0
-## SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
-#SUBSCRIBE=0
-
-#=============================================================================
+#=============================================================================================#
 # Calendario Fecha y hora
 [time]
-command=date '+%H:%M/%d-%m' 
+command=date '+%H:%M hs / %d-%m' 
 interval=1
 color=#7788B0
-#=============================================================================
+#==============================================================================================#
+[speedtest]
+#label=SpeedTest
+#command=$SCRIPT_DIR/speedtest/speedtest
+#interval=300
+#=============================================================================================#
+
+#=============================================================================================#
 [dunst]
-label=| 
+label=|  󰂚
 command=$SCRIPT_DIR/dunst/dunst
 interval=once
 format=json
 markup=pango
 min_width=25
 align=center
-#=============================================================================
+#==============================================================================================#
+[shutdown_menu]
+full_text= |  ⏻  |
+min_width=25 
+command=$SCRIPT_DIR/shutdown_menu/shutdown_menu
+markup=pango
+#==============================================================================================#
 
