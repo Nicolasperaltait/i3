@@ -13,9 +13,9 @@ sudo nala fetch --auto -y                                                       
 
 sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 -y  # Esenciales para i3
 
-sudo nala install git wget curl zsh htop preload kitty xrandr rofi compton font-manager lxappearance -y              # Instala Paquetes basicos.
+sudo nala install git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance -y    # Instala Paquetes basicos.
 
-sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme gpaste -y     #parcellite
+sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme gpaste -y      #parcellite
 
 # sacado de https://geekland.eu/instalar-configurar-y-usar-el-gestor-de-ventanas-i3-en-linux/
 

@@ -1,20 +1,8 @@
 #!/bin/bash
 
-
-
-#######################################
-
-
 ## Instalaciones especiales 
 
-
-#######################################
-
-sudo nala install flameshot -y
-
-
-## LIBRE WOLF 
-
+## Libre Wolf
 
 sudo apt update && sudo apt install -y wget gnupg lsb-release apt-transport-https ca-certificates
 
@@ -35,33 +23,9 @@ sudo apt update
 
 sudo apt install librewolf -y
 
+#=======================================================================================================#
 
-#######################################
-
-
-# FLATHUB 
-
-
-flatpak install flathub com.google.Chrome -y 
-
-flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y
-
-flatpak install flathub com.github.tchx84.Flatseal -y #Gestionar permisos de flatpak
-
-
-#######################################
-
-#SPOTIFY
-
-curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg &&
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list &&
-sudo apt-get update && sudo apt-get install spotify-client
-
-######################################
-
-# visual studio code 
-
-
+## Visual Studio Code 
 
 sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -72,22 +36,31 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install code # or code-insiders
 
+#=======================================================================================================#
 
+# Spotify
 
-#########################################
+curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg &&
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list &&
+sudo apt-get update && sudo apt-get install spotify-client
 
+#=======================================================================================================#
 
-#Discord 
+## Flathub 
 
+flatpak install flathub com.github.tchx84.Flatseal -y                  # Flatseal // Gestionar permisos de flatpak
 
-flatpak install flathub com.discordapp.Discord -y
+flatpak install flathub com.google.Chrome -y                           # Chrome
 
+flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y   # Microsoft Teams
 
+flatpak install flathub com.discordapp.Discord -y                      # Discord 
 
-########################################
+#=======================================================================================================#
 
+# Se dejo para ejecuatar al final porque tiene un script.
 
-#scrcpy
+## Scrcpy
 
 # for Debian/Ubuntu
 sudo apt install ffmpeg libsdl2-2.0-0 adb wget \
@@ -98,3 +71,6 @@ sudo apt install ffmpeg libsdl2-2.0-0 adb wget \
 git clone https://github.com/Genymobile/scrcpy
 cd scrcpy &&
 sudo ./install_release.sh
+
+#=======================================================================================================#
+
