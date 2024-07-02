@@ -32,13 +32,9 @@ sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-the
 
 ## Gestion de Audio y Sonido 
 
-sudo apt install pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse libspa-0.2-bluetooth alsa-utils -y 
+sudo apt install pulseaudio-module-bluetooth blueman pipewire-alsa pipewire-jack pipewire-audio wireplumber pipewire-pulse libspa-0.2-bluetooth -y
 
-## La parte Bluethooth no es compatible todavia con el modulo de i3bloks 
-
-#sudo nala install pulseaudio-module-bluetooth                                                                        # Necesario para el funcionamiento
-#sudo nala install blueman                                                                                            # Gestor GUI
-
+# https://wiki.debian.org/PipeWire
 
 #=======================================================================================#
 
