@@ -24,7 +24,7 @@ sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst su
 
 sudo nala install git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance timeshift -y     
 
-sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme parcellite -y             
+sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme parcellite gammy -y             
 
 # parcellite = clipbord manager 
 
