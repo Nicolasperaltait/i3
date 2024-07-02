@@ -23,5 +23,7 @@ sudo systemctl start clamav-daemon                            # Habilitar y inic
 
 sudo clamscan -r /home                                        # Analisa la ruta home
 #=========================================================#
-
-echo "ACTUALIZACION y LIMPIEZA FINALIZADA"
+echo ¨ ¨
+echo ¨ ¨
+echo ¨ ¨
+echo "Ya podes cerrar la terminal"
