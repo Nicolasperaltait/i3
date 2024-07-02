@@ -11,3 +11,4 @@ sudo apt install linux-headers-amd64
 # deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware // ruta /etc/apt/sources.list
 
 sudo apt install nvidia-tesla-470-driver # Mi driver Reemplazar por el q necesites
+
