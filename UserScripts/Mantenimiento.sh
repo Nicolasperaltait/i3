@@ -21,7 +21,23 @@ sudo freshclam                                                # Actualizar la ba
 sudo systemctl start clamav-freshclam                         # Iniciar de nuevo el servicio de actualización de ClamAV
 sudo systemctl start clamav-daemon                            # Habilitar y iniciar el servicio de ClamAV
 
-sudo clamscan -r /home                                        # Analisa la ruta home
+
+#!/bin/bash
+
+# Solicita confirmación del usuario
+read -p "¿Está seguro que desea ejecutar 'clamscan' en el directorio /home? (y/n): " confirm
+
+# Verifica la respuesta del usuario
+if [[ $confirm == "y" ]]; then
+  # Ejecuta el comando si el usuario confirma
+  sudo clamscan -r /home
+else
+  # Mensaje en caso de cancelación
+  echo "Operación cancelada."
+fi
+
+
+
 #=========================================================#
 echo ¨ ¨
 echo ¨ ¨
