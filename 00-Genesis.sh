@@ -24,7 +24,7 @@ sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst su
 
 sudo nala install git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance timeshift -y     
 
-sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme parcellite gammy solaar -y             
+sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme parcellite gammy solaar thunar gnome-calculator gnome-calendar obs-studio -y             
 
 # parcellite = clipbord manager // solaar = Control de mouse para el MX3
 
