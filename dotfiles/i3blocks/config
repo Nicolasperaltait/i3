@@ -1,24 +1,20 @@
 # i3blocks config file
-#
-# Please see man i3blocks for a complete reference!
-# The man page is also hosted at http://vivien.github.io/i3blocks
-#
 # List of valid properties:
 #
-# align
-# color
-# command
-# full_text
-# instance
-# interval
-# label
-# min_width
-# name
-# separator
-# separator_block_width
-# short_text
-# signal
-# urgent
+# 	align
+# 	color
+# 	command
+# 	full_text
+# 	instance
+# 	interval
+# 	label
+# 	min_width
+# 	name
+# 	separator
+# 	separator_block_width
+# 	short_text
+# 	signal
+# 	urgent
 
 #==============================================================================================#
 # Global properties
@@ -28,63 +24,35 @@
 # Change $SCRIPT_DIR to the location of your scripts!
 command=$SCRIPT_DIR/$BLOCK_NAME
 separator_block_width=12
-markup=none
+markup=pango
 
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
 
-#==============================================================================================#
-#Genericos del sistema 
-#
-
-# Memory usage
-#[memory]
-#label=RAM
-#command=$SCRIPT_DIR/memory/memory
-#separator=false
-#interval=30
-
-# CPU usage
-#[cpu_usage]
-#label=CPU
-#command=$SCRIPT_DIR/cpu_usage/cpu_usage
-#interval=10
-#min_width=CPU 100.00%
-#separator=false
-
-#[load_average]
-#label=LOAD
-#interval=10
-
+#=============================================================================================#
+[keyindicator]
+command=$SCRIPT_DIR/keyindicator/keyindicator
+markup=pango
+interval=once
+signal=11
 #=============================================================================================#
 #Es necesario tener //  sudo apt install alsa-utils
-[volume-pulseaudio]
-command=$SCRIPT_DIR/volume-pulseaudio/volume-pulseaudio
+[volume-pipewire]
+command=$SCRIPT_DIR/volume-pipewire/volume-pipewire
 interval=1
 signal=1
 #=============================================================================================#
 # Calendario Fecha y hora
 [time]
-command=date '+%H:%M hs / %d-%m' 
+command=date '+%d-%m   %H:%M hs' 
 interval=1
 color=#7788B0
-#==============================================================================================#
+#=============================================================================================#
 [speedtest]
-#label=SpeedTest
-#command=$SCRIPT_DIR/speedtest/speedtest
-#interval=300
-#=============================================================================================#
-
-#=============================================================================================#
-[dunst]
-label=|  󰂚
-command=$SCRIPT_DIR/dunst/dunst
-interval=once
-format=json
-markup=pango
-min_width=25
-align=center
+label=Ping
+command=$SCRIPT_DIR/speedtest/speedtest
+interval=300
 #==============================================================================================#
 [shutdown_menu]
 full_text= |  ⏻  |
@@ -92,4 +60,3 @@ min_width=25
 command=$SCRIPT_DIR/shutdown_menu/shutdown_menu
 markup=pango
 #==============================================================================================#
-
