@@ -44,17 +44,6 @@ curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo 
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list &&
 sudo apt-get update && sudo apt-get install spotify-client
 
-#=======================================================================================================#
-
-## Flathub 
-
-flatpak install flathub com.github.tchx84.Flatseal -y                  # Flatseal // Gestionar permisos de flatpak
-
-flatpak install flathub com.google.Chrome -y                           # Chrome
-
-flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y   # Microsoft Teams
-
-flatpak install flathub com.discordapp.Discord -y                      # Discord 
 
 #=======================================================================================================#
 
