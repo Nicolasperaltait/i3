@@ -20,7 +20,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt install nala -y
 
 sudo nala fetch --auto -y                                                                                                       # Examina los servidores espejo y setea los 3 primeros por defecto. 
 
-sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 -y             # Esenciales para i3
+sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 xfce4-session -y             # Esenciales para i3
 
 sudo nala install git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance timeshift -y     
 
