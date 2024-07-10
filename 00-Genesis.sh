@@ -14,11 +14,11 @@ sudo usermod -aG sudo nicolas &&
 #=======================================================================================#
 ## Instalacion Genesis Basicos e importates para el sistema. 
 
-setxkbmap 'us(intl)'                                                                                                            # Teclado en Ingles Internacional con teclas muerta (AltGR)
+setxkbmap 'us(intl)'                                                                                                              # Teclado en Ingles Internacional con teclas muerta (AltGR)
 
 sudo apt update && sudo apt upgrade -y && sudo apt install nala -y                                                             
 
-sudo nala fetch --auto -y                                                                                                       # Examina los servidores espejo y setea los 3 primeros por defecto. 
+sudo nala fetch --auto -y                                                                                                         # Examina los servidores espejo y setea los 3 primeros por defecto. 
 
 sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 xfce4-session -y # Esenciales para i3
 
