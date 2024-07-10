@@ -3,7 +3,7 @@
 # 1. Pendiente de documentacion de que hace cada paquete instalado o para que es 
 
 #=======================================================================================#
-## Permisos para el usuario | Falta testear
+## Permisos para el usuario | Falta testear 
 
 su root &&
 
@@ -20,11 +20,11 @@ sudo apt update && sudo apt upgrade -y && sudo apt install nala -y
 
 sudo nala fetch --auto -y                                                                                                       # Examina los servidores espejo y setea los 3 primeros por defecto. 
 
-sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 xfce4-session -y             # Esenciales para i3
+sudo nala install xorg i3 i3lock i3status i3lock-fancy lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 xfce4-session -y # Esenciales para i3
 
 sudo nala install git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance timeshift -y     
 
-sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme papirus-icon-theme parcellite gammy solaar thunar gnome-calculator gnome-calendar obs-studio -y             
+sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme parcellite gammy solaar thunar gnome-calculator gnome-calendar obs-studio -y  #papirus-icon-theme           
 
 # parcellite = clipbord manager // solaar = Control de mouse para el MX3
 
