@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 1. Pendiente de documentacion de que hace cada paquete instalado o para que es 
+# 1. Pendiente de documentacion de que hace cada paquete instalado o para que es  test
 
 #=======================================================================================#
 ## Permisos para el usuario | Falta testear 
