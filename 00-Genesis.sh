@@ -24,9 +24,9 @@ sudo nala install xorg i3 i3status lxpolkit ntfs-3g dunst suckless-tools linux-h
 
 sudo nala install git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance timeshift -y     
 
-sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme parcellite gammy solaar thunar gnome-calculator gnome-calendar obs-studio -y  #papirus-icon-theme           
+sudo nala install feh lxappearance numlockx pulseaudio-utils pavucontrol arc-theme gammy solaar thunar gnome-calculator gnome-calendar obs-studio copyQ -y  #papirus-icon-theme           
 
-# parcellite = clipbord manager // solaar = Control de mouse para el MX3
+# copyQ = clipbord manager // solaar = Control de mouse para el MX3
 
 # sacado de https://geekland.eu/instalar-configurar-y-usar-el-gestor-de-ventanas-i3-en-linux/
 
