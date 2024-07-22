@@ -4,6 +4,7 @@
 
 
 sudo nala update && sudo nala upgrade -y 
+Sudo nala install clamav 
 
 
 echo "================================================== LIMPIEZA =================================================="

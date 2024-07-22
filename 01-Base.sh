@@ -10,7 +10,7 @@ sudo apt install nala -y && sudo nala fetch --auto -y                           
 
 sudo nala install xorg i3 i3status lxpolkit ntfs-3g dunst suckless-tools linux-headers-amd64 xfce4-session -y   # Esenciales para i3
 
-sudo nala install git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance timeshift -y     
+sudo nala install ufw clamav git wget curl zsh htop preload kitty flameshot xrandr rofi compton font-manager lxappearance timeshift -y     
 
 sudo nala install feh lxappearance numlockx arc-theme gammy solaar thunar gnome-calculator gnome-calendar obs-studio copyQ -y  #papirus-icon-theme // copyQ = clipbord manager // solaar = Control de mouse para el MX3          
 
