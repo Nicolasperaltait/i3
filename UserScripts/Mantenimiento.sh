@@ -18,9 +18,12 @@ echo " --------------- AV Scan --------------- "
     sudo systemctl start clamav-freshclam                         # Iniciar de nuevo el servicio de actualización de ClamAV
     sudo systemctl start clamav-daemon                            # Habilitar y iniciar el servicio de ClamAV
 
+
+#--------------------------------#
+
 #!/bin/bash
 
-# Solicita confirmación del usuario
+# Script de escaneo, te pide confirmacion. 
 
     read -p "¿Está seguro que desea ejecutar 'clamscan' en el directorio /home? (y/n): " confirm
     if [[ $confirm == "y" ]]; then                               # Verifica la respuesta del usuario
