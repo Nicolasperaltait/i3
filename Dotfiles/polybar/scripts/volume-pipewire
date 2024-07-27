@@ -1,35 +1,39 @@
 #!/bin/bash
-# Displays the default device, volume, and mute status for i3blocks
+# Este script muestra el dispositivo predeterminado, el volumen y el estado de silencio para i3blocks
 
-set -a
+set -a  # Exporta todas las variables definidas a partir de este punto
 
+# Definición de símbolos para diferentes niveles de volumen y estado de silencio
 AUDIO_HIGH_SYMBOL=${AUDIO_HIGH_SYMBOL:-''}
-
 AUDIO_MED_THRESH=${AUDIO_MED_THRESH:-50}
 AUDIO_MED_SYMBOL=${AUDIO_MED_SYMBOL:-''}
-
 AUDIO_LOW_THRESH=${AUDIO_LOW_THRESH:-0}
 AUDIO_LOW_SYMBOL=${AUDIO_LOW_SYMBOL:-''}
-
 AUDIO_MUTED_SYMBOL=${AUDIO_MUTED_SYMBOL:-''}
 
+# Incremento de volumen por defecto
 AUDIO_DELTA=${AUDIO_DELTA:-5}
 
+# Colores por defecto para el audio no silenciado y silenciado
 DEFAULT_COLOR=${DEFAULT_COLOR:-"#88c0d0"}
-MUTED_COLOR=${MUTED_COLOR:-"#eb2a22"}
+MUTED_COLOR=${MUTED_COLOR:-"#bf616a"}
 
-
+# Formatos de salida largos y cortos
 LONG_FORMAT=${LONG_FORMAT:-'${SYMB}${NAME}'}
-#LONG_FORMAT=${LONG_FORMAT:-'${SYMB} ${VOL}% [${INDEX}:${NAME}]'}
 SHORT_FORMAT=${SHORT_FORMAT:-'${SYMB} ${VOL}% [${INDEX}]'}
+
+# Opciones para usar el nombre de ALSA o la descripción del dispositivo
 USE_ALSA_NAME=${USE_ALSA_NAME:-0}
 USE_DESCRIPTION=${USE_DESCRIPTION:-0}
 
+# Suscripción a eventos de volumen
 SUBSCRIBE=${SUBSCRIBE:-0}
 
+# Configuración del mezclador y control de sonido
 MIXER=${MIXER:-""}
 SCONTROL=${SCONTROL:-""}
 
+# Procesamiento de opciones de línea de comando
 while getopts F:Sf:adH:M:L:X:T:t:C:c:i:m:s:h opt; do
     case "$opt" in
         S) SUBSCRIBE=1 ;;
@@ -74,6 +78,7 @@ Options:
     esac
 done
 
+# Establecimiento del mezclador y control de sonido predeterminados si no se especifican
 if [[ -z "$MIXER" ]] ; then
     MIXER="default"
     if amixer -D pulse info >/dev/null 2>&1 ; then
@@ -85,9 +90,10 @@ if [[ -z "$SCONTROL" ]] ; then
     SCONTROL=$(amixer -D "$MIXER" scontrols | sed -n "s/Simple mixer control '\([^']*\)',0/\1/p" | head -n1)
 fi
 
+# Determinación de la capacidad de control de volumen
 CAPABILITY=$(amixer -D $MIXER get $SCONTROL | sed -n "s/  Capabilities:.*cvolume.*/Capture/p")
 
-
+# Funciones para manejar dispositivos de reproducción predeterminados y mostrar información
 function move_sinks_to_new_default {
     DEFAULT_SINK=$1
     pactl list sink-inputs | grep 'Sink Input #' | grep -o '[0-9]\+' | while read SINK
@@ -108,6 +114,7 @@ function set_default_playback_device_next {
     move_sinks_to_new_default $default_sink
 }
 
+# Manejo de eventos de botones para ajustar el volumen o cambiar el dispositivo predeterminado
 case "$BLOCK_BUTTON" in
     1) set_default_playback_device_next ;;
     2) amixer -q -D $MIXER sset $SCONTROL $CAPABILITY toggle ;;
@@ -116,6 +123,7 @@ case "$BLOCK_BUTTON" in
     5) amixer -q -D $MIXER sset $SCONTROL $CAPABILITY $AUDIO_DELTA%- ;;
 esac
 
+# Funciones para imprimir el formato de salida basado en el estado actual del audio
 function print_format {
     echo "$1" | envsubst '${SYMB}${VOL}${INDEX}${NAME}'
 }
@@ -170,6 +178,7 @@ sed 's/.*= "\(.*\)".*/\1/')
     fi
 }
 
+# Impresión inicial del bloque de información y suscripción a eventos de cambio si está habilitado
 print_block
 if [[ $SUBSCRIBE == 1 ]] ; then
     while read -r EVENT; do
