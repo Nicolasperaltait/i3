@@ -4,4 +4,4 @@ su root &&
 
 apt-get install sudo &&
 
-sudo usermod -aG sudo nicolas &&
+sudo usermod -a -G sudo nicolas &&
