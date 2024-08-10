@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt update && sudo apt upgrade -y && sudo apt install ufw clamav clamav-daemon
+sudo apt update && sudo apt upgrade -y && sudo apt install ufw clamav clamav-daemon -y
 
 #  Firewall 
     sudo apt install install ufw                                                
