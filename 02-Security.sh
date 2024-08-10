@@ -23,7 +23,7 @@ sudo ufw enable                                                                 
 # Anti Virus
 echo "================== AV Configuration =================="
 
-sudo nala install clamav -y && sudo nala install clamav-daemon -y
+sudo apt install clamav -y && sudo apt install clamav-daemon -y
 
 sudo systemctl stop clamav-freshclam                                                       # Detener el servicio de actualización de ClamAV
 sudo freshclam                                                                             # Actualizar la base de datos de firmas de virus de ClamAV
