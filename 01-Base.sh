@@ -12,7 +12,7 @@ sudo apt install xorg i3 i3status dunst suckless-tools linux-headers-amd64 polyb
 
 sudo apt install lxpolkit ntfs-3g xfce4-session
 
-sudo apt install ufw clamav git wget curl zsh htop preload kitty rofi compton font-manager lxappearance timeshift  flameshot -y     
+sudo apt install zsh ufw clamav git wget curl  htop preload kitty rofi compton font-manager lxappearance timeshift flameshot -y     
 
 sudo apt install feh lxappearance numlockx arc-theme  solaar thunar gnome-calculator gnome-calendar obs-studio  -y  #papirus-icon-theme // copyQ = clipbord manager // solaar = Control de mouse para el MX3          
 
